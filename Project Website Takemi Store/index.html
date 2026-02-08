@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takemi Store - Fast & Reliable Robux Top-Up Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-slider"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" data-page="home">
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <span>Takemi Store</span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="#" class="nav-link active" data-page="home" data-lang-en="Home" data-lang-id="Beranda">Home</a>
+                <a href="#" class="nav-link" data-page="order" data-lang-en="Order Robux" data-lang-id="Pesan Robux">Order Robux</a>
+                <a href="#" class="nav-link" data-page="track" data-lang-en="Track Order" data-lang-id="Lacak Pesanan">Track Order</a>
+                <a href="#" class="nav-link" data-page="faq">FAQ</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="lang-switch" id="langSwitch">
+                    <i class="fas fa-globe"></i>
+                    <span>EN</span>
+                </button>
+                <button class="theme-switch" id="themeSwitch">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn-login" id="loginBtn">
+                    <i class="fas fa-user"></i>
+                    <span data-lang-en="Login" data-lang-id="Masuk">Login</span>
+                </button>
+                <button class="btn-order" data-page="order">
+                    <span data-lang-en="Order Now" data-lang-id="Pesan Sekarang">Order Now</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page active">
+        <section class="hero">
+            <div class="floating-circles">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            
+            <div class="hero-content">
+                <h1 class="hero-title" data-lang-en="Fast & Reliable Robux Top-Up" data-lang-id="Top-Up Robux Cepat & Terpercaya">Fast & Reliable Robux Top-Up</h1>
+                <p class="hero-subtitle" data-lang-en="Get your Robux instantly with the safest method. 24/7 support available." data-lang-id="Dapatkan Robux instan dengan metode teraman. Dukungan 24/7.">Get your Robux instantly with the safest method. 24/7 support available.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-star"></i></div>
+                        <div class="stat-value" data-stat="rating">10</div>
+                        <div class="stat-label" data-lang-en="Rating" data-lang-id="Penilaian">Rating</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Robux_logo.svg/200px-Robux_logo.svg.png" alt="Robux" style="width: 40px; height: 40px;">
+                        </div>
+                        <div class="stat-value" data-stat="stock">200K+</div>
+                        <div class="stat-label" data-lang-en="Stock Robux" data-lang-id="Stok Robux">Stock Robux</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="live-timeline">
+                <div class="timeline-header">
+                    <div class="pulse-dot"></div>
+                    <span data-lang-en="Recent Transactions" data-lang-id="Transaksi Terbaru">Recent Transactions</span>
+                </div>
+                <div class="timeline-items"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title" data-lang-en="Featured Games" data-lang-id="Game Unggulan">Featured Games</h2>
+            <p class="section-subtitle" data-lang-en="Popular Roblox games with exclusive offers" data-lang-id="Game Roblox populer dengan penawaran eksklusif">Popular Roblox games with exclusive offers</p>
+            <div class="games-grid" id="featuredGames"></div>
+        </div>
+
+        <div class="container" style="max-width: 1200px; margin: 60px auto;">
+            <h2 class="section-title text-center" data-lang-en="Why Choose Takemi Store?" data-lang-id="Mengapa Memilih Takemi Store?">Why Choose Takemi Store?</h2>
+            <p class="section-subtitle text-center" style="max-width: 600px; margin: 0 auto 40px;" data-lang-en="Our commitment to safe, fast, and reliable Robux top-up experience" data-lang-id="Komitmen kami untuk pengalaman top-up Robux yang aman, cepat, dan andal">Our commitment to safe, fast, and reliable Robux top-up experience</p>
+            
+            <div class="games-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                <div class="card" style="text-align: center; padding: 40px 30px;">
+                    <div style="width: 80px; height: 80px; background: var(--light-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--primary-red); font-size: 36px;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 style="font-weight: 700; margin-bottom: 12px; font-size: 20px;" data-lang-en="100% Safe Account" data-lang-id="Akun 100% Aman">100% Safe Account</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;" data-lang-en="We never ask for your private data. Account security is our priority." data-lang-id="Kami tidak pernah meminta data pribadi. Keamanan akun adalah prioritas kami.">We never ask for your private data. Account security is our priority.</p>
+                </div>
+
+                <div class="card" style="text-align: center; padding: 40px 30px;">
+                    <div style="width: 80px; height: 80px; background: var(--light-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--primary-red); font-size: 36px;">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 style="font-weight: 700; margin-bottom: 12px; font-size: 20px;" data-lang-en="10+ Years Experience" data-lang-id="Pengalaman 10+ Tahun">10+ Years Experience</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;" data-lang-en="Professional since 2013, understanding Roblox ecosystem for consistent service." data-lang-id="Profesional sejak 2013, memahami ekosistem Roblox untuk layanan konsisten.">Professional since 2013, understanding Roblox ecosystem for consistent service.</p>
+                </div>
+
+                <div class="card" style="text-align: center; padding: 40px 30px;">
+                    <div style="width: 80px; height: 80px; background: var(--light-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--primary-red); font-size: 36px;">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 style="font-weight: 700; margin-bottom: 12px; font-size: 20px;" data-lang-en="Guaranteed Robux Delivered" data-lang-id="Garansi Robux Terkirim">Guaranteed Robux Delivered</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;" data-lang-en="Robux delivered guaranteed. If there's an issue, our team is ready to help 24/7." data-lang-id="Robux dijamin terkirim. Jika ada masalah, tim kami siap membantu 24/7.">Robux delivered guaranteed. If there's an issue, our team is ready to help 24/7.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 Takemi Store. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- ORDER PAGE -->
+    <div id="orderPage" class="page">
+        <div class="container">
+            <h1 class="section-title">Complete Your <span style="color: var(--primary-red);">Order</span></h1>
+            <p class="section-subtitle" data-lang-en="Select your package and enter your details" data-lang-id="Pilih paket dan masukkan detail Anda">Select your package and enter your details</p>
+            
+            <div class="order-container">
+                <div class="order-form">
+                    <!-- STEP 1: Order Type (4 METHODS) -->
+                    <div class="step-indicator">
+                        <div class="step active">1</div>
+                        <h3 class="step-title" data-lang-en="Order Type" data-lang-id="Tipe Pesanan">Order Type</h3>
+                    </div>
+                    
+                    <div class="method-tabs">
+                        <div class="method-tab active" data-method="gamepass5day">
+                            <div class="method-title" data-lang-en="Robux" data-lang-id="Robux Link">Robux Link</div>
+                            <div class="method-subtitle" data-lang-en="Via Gamepass Method" data-lang-id="Via Link Gamepass 5 Hari">Via Gamepass Link 5 Day</div>
+                        </div>
+                        <div class="method-tab" data-method="giftingGamepass">
+                            <div class="method-title" data-lang-en="Gift Gamepass" data-lang-id="Robux Gifting">Gift Gamepass</div>
+                            <div class="method-subtitle" data-lang-en="Gift Existing Gamepass" data-lang-id="Gifting Gamepass">Gifting Gamepass</div>
+                        </div>
+                        <div class="method-tab" data-method="robuxGroup">
+                            <div class="method-title" data-lang-en="Group" data-lang-id="Robux Group">Group</div>
+                            <div class="method-subtitle" data-lang-en="Via Group Funds" data-lang-id="Via Group Roblox 14 Hari">Via Group Funds 14 Days</div>
+                        </div>
+                        <div class="method-tab" data-method="viaLogin">
+                            <div class="method-title" data-lang-en="Via Login" data-lang-id="Via Login">Via Login</div>
+                            <div class="method-subtitle" data-lang-en="3 Options Available" data-lang-id="Instant Super Cepat">Instant Super Fast</div>
+                        </div>
+                    </div>
+                    <!-- STEP 2: Select Package -->
+                    <div class="step-indicator">
+                        <div class="step">2</div>
+                        <h3 class="step-title" data-lang-en="Select Robux Package" data-lang-id="Pilih Paket Robux">Select Robux Package</h3>
+                        <a href="#" class="custom-amount-link" id="customAmountLink" data-lang-en="Custom Amount" data-lang-id="Jumlah Kustom">Custom Amount</a>
+                    </div>
+
+                    <!-- Gamepass 5 Day Packages (DEFAULT SHOWN) -->
+                    <div id="gamepass5dayPackages" class="packages-container" style="display: block;">
+                        <div id="customGamepassSection" style="display: none; margin-bottom: 20px;">
+                            <div class="form-group">
+                                <label class="form-label" data-lang-en="Enter Custom Robux Amount" data-lang-id="Masukkan Jumlah Robux">Enter Custom Robux Amount</label>
+                                <input type="number" class="form-input" id="customGamepassAmount" 
+                                    placeholder="Enter amount (min 1)" min="1" 
+                                    oninput="calculateCustomGamepass(this.value)">
+                                <div id="gamepassPriceDisplay" style="margin-top: 10px; font-weight: 600; color: var(--primary-red);"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="packages-grid" id="gamepass5dayGrid"></div>
+                    </div>
+
+                    <!-- Gifting Gamepass -->
+                    <div id="giftingGamepassPackages" class="packages-container">
+                        <div class="packages-grid" id="giftingGamepassGrid"></div>
+                        
+                        <div class="alert info" style="margin-top: 20px;">
+                            <i class="fas fa-info-circle"></i>
+                            <span data-lang-en="Or enter custom Robux amount below" data-lang-id="Atau masukkan jumlah Robux custom di bawah">Or enter custom Robux amount below</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" data-lang-en="Enter Custom Robux Amount (Optional)" data-lang-id="Masukkan Jumlah Robux (Opsional)">Enter Custom Robux Amount (Optional)</label>
+                            <input type="number" class="form-input" id="customGiftingAmount" 
+                                placeholder="Enter amount (min 1)" min="1" 
+                                oninput="calculateCustomGifting(this.value)">
+                            <div id="giftingPriceDisplay" style="margin-top: 10px; font-weight: 600; color: var(--primary-red);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Robux Group -->
+                    <div id="robuxGroupPackages" class="packages-container">
+                        <div id="customGroupSection" style="display: none; margin-bottom: 20px;">
+                            <div class="form-group">
+                                <label class="form-label" data-lang-en="Enter Custom Robux Amount" data-lang-id="Masukkan Jumlah Robux">Enter Custom Robux Amount</label>
+                                <input type="number" class="form-input" id="customGroupAmount" 
+                                    placeholder="Enter amount (min 1)" min="1" 
+                                    oninput="calculateCustomGroup(this.value)">
+                                <div id="groupPriceDisplay" style="margin-top: 10px; font-weight: 600; color: var(--primary-red);"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="packages-grid" id="robuxGroupGrid"></div>
+                    </div>
+
+                    <!-- Via Login -->
+                    <div id="viaLoginPackages" class="packages-container">
+                        <div class="packages-grid" id="viaLoginGrid"></div>
+                    </div>
+
+                    <!-- STEP 3: Recipient Details -->
+                    <div class="step-indicator" style="margin-top: 30px;">
+                        <div class="step">3</div>
+                        <h3 class="step-title" data-lang-en="Recipient Details" data-lang-id="Detail Penerima">Recipient Details</h3>
+                        <a href="#" class="custom-amount-link" id="addAnotherRecipient" data-lang-en="+ Add Another Recipient" data-lang-id="+ Tambah Penerima">+ Add Another Recipient</a>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-lang-en="Roblox Username #1" data-lang-id="Username Roblox #1">Roblox Username #1</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" class="form-input" id="robloxUsername" placeholder="Enter username" style="flex: 1;">
+                            <button class="btn-primary" id="checkUsernameBtn" style="width: auto; padding: 10px 20px;">CEK</button>
+                        </div>
+                        <div id="usernameValidation" class="username-validation"></div>
+                    </div>
+
+                    <div id="recipientsList" class="recipients-list"></div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3 class="summary-title"><i class="fas fa-shopping-cart"></i> <span data-lang-en="Order Summary" data-lang-id="Ringkasan Pesanan">Order Summary</span></h3>
+                    
+                    <div id="orderSummaryContent">
+                        <p class="text-center" style="color: var(--text-secondary); padding: 20px;" data-lang-en="Select package and add recipient" data-lang-id="Pilih paket dan tambah penerima">Select package and add recipient</p>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label class="form-label" data-lang-en="Discount Code (Optional)" data-lang-id="Kode Diskon (Opsional)">Discount Code (Optional)</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" class="form-input" id="discountCode" placeholder="ENTER CODE" style="flex: 1; text-transform: uppercase;">
+                            <button class="btn-primary" id="applyDiscountBtn" style="width: auto; padding: 10px 20px;" data-lang-en="Apply" data-lang-id="Terapkan">Apply</button>
+                        </div>
+                        <small id="discountMessage" style="display: block; margin-top: 5px; font-size: 12px;"></small>
+                    </div>
+
+                    <div class="benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-lang-en="5-15 min delivery" data-lang-id="Pengiriman 5-15 menit">5-15 min delivery</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-lang-en="100% Safe method" data-lang-id="Metode 100% Aman">100% Safe method</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-lang-en="24/7 Support" data-lang-id="Dukungan 24/7">24/7 Support</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-checkout" id="checkoutBtn" disabled data-lang-en="Proceed to Payment" data-lang-id="Lanjut ke Pembayaran">Proceed to Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRACK ORDER PAGE -->
+    <div id="trackPage" class="page">
+        <div class="container" style="max-width: 900px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h1 class="section-title" data-lang-en="Track Your Order" data-lang-id="Lacak Pesanan Anda">Track Your Order</h1>
+                <p class="section-subtitle" data-lang-en="Enter your Order ID or Username to check order status" data-lang-id="Masukkan ID Pesanan atau Username untuk memeriksa status">Enter your Order ID or Username to check order status</p>
+            </div>
+
+            <div class="search-methods">
+                <div class="search-method active">
+                    <div class="method-icon"><i class="fas fa-receipt"></i></div>
+                    <h3 data-lang-en="Search by Order ID" data-lang-id="Cari dengan ID Pesanan">Search by Order ID</h3>
+                    <p style="color: var(--text-secondary); font-size: 13px;">Example: TK12345</p>
+                </div>
+                <div class="search-method">
+                    <div class="method-icon"><i class="fas fa-user"></i></div>
+                    <h3 data-lang-en="Search by Username" data-lang-id="Cari dengan Username">Search by Username</h3>
+                    <p style="color: var(--text-secondary); font-size: 13px;" data-lang-en="Shows all orders" data-lang-id="Tampilkan semua pesanan">Shows all orders</p>
+                </div>
+            </div>
+
+            <div class="search-box" style="max-width: 600px; margin: 30px auto;">
+                <form onsubmit="searchOrder(event)">
+                    <div class="form-group">
+                        <label class="form-label" data-lang-en="Order ID or Username" data-lang-id="ID Pesanan atau Username">Order ID or Username</label>
+                        <input type="text" class="form-input" id="orderSearchInput" placeholder="TK12345 or username">
+                    </div>
+                    <button type="submit" class="btn-search">
+                        <i class="fas fa-search"></i> <span data-lang-en="Search Order" data-lang-id="Cari Pesanan">Search Order</span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="orderResults"></div>
+        </div>
+    </div>
+
+    <!-- FAQ PAGE -->
+    <div id="faqPage" class="page">
+        <div class="container">
+            <h1 class="section-title text-center" data-lang-en="Frequently Asked Questions" data-lang-id="Pertanyaan yang Sering Diajukan">Frequently Asked Questions</h1>
+            <p class="section-subtitle text-center" data-lang-en="Find answers to common questions" data-lang-id="Temukan jawaban untuk pertanyaan umum">Find answers to common questions</p>
+
+            <div class="faq-container">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-clock"></i>
+                        <span data-lang-en="How long does delivery take?" data-lang-id="Berapa lama waktu pengiriman?">How long does delivery take?</span>
+                    </div>
+                    <p class="faq-answer" data-lang-en="Typically 5-15 minutes after payment is confirmed. In some cases, it may take up to 24 hours." data-lang-id="Biasanya 5-15 menit setelah pembayaran dikonfirmasi. Dalam beberapa kasus, mungkin memakan waktu hingga 24 jam.">Typically 5-15 minutes after payment is confirmed. In some cases, it may take up to 24 hours.</p>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-shield-alt"></i>
+                        <span data-lang-en="Is it safe?" data-lang-id="Apakah aman?">Is it safe?</span>
+                    </div>
+                    <p class="faq-answer" data-lang-en="Yes! We use official Roblox methods only. Your account is 100% safe." data-lang-id="Ya! Kami hanya menggunakan metode resmi Roblox. Akun Anda 100% aman.">Yes! We use official Roblox methods only. Your account is 100% safe.</p>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-credit-card"></i>
+                        <span data-lang-en="What payment methods do you accept?" data-lang-id="Metode pembayaran apa yang Anda terima?">What payment methods do you accept?</span>
+                    </div>
+                    <p class="faq-answer" data-lang-en="We accept all major payment methods via Midtrans: E-Wallet (GoPay, OVO, Dana), Virtual Account (BCA, Mandiri, BNI, BRI), Credit/Debit Card, and QRIS." data-lang-id="Kami menerima semua metode pembayaran utama melalui Midtrans: E-Wallet (GoPay, OVO, Dana), Virtual Account (BCA, Mandiri, BNI, BRI), Kartu Kredit/Debit, dan QRIS.">We accept all major payment methods via Midtrans: E-Wallet (GoPay, OVO, Dana), Virtual Account (BCA, Mandiri, BNI, BRI), Credit/Debit Card, and QRIS.</p>
+                </div>
+
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-undo-alt"></i>
+                        <span data-lang-en="Can I get a refund?" data-lang-id="Bisakah saya mendapatkan pengembalian dana?">Can I get a refund?</span>
+                    </div>
+                    <p class="faq-answer" data-lang-en="Refunds are available if there's an issue with delivery. Please contact support within 24 hours." data-lang-id="Pengembalian dana tersedia jika ada masalah dengan pengiriman. Silakan hubungi dukungan dalam 24 jam.">Refunds are available if there's an issue with delivery. Please contact support within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUTH MODAL -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            
+            <div class="modal-header">
+                <div class="modal-logo"><i class="fas fa-bolt"></i></div>
+                <h2 data-lang-en="Welcome to Takemi Store" data-lang-id="Selamat Datang di Takemi Store">Welcome to Takemi Store</h2>
+                <p style="color: var(--text-secondary);" data-lang-en="Login or register to continue" data-lang-id="Masuk atau daftar untuk melanjutkan">Login or register to continue</p>
+            </div>
+            
+            <div class="modal-body">
+                <div class="tabs">
+                    <button class="tab active" data-tab="login" data-lang-en="Login" data-lang-id="Masuk">Login</button>
+                    <button class="tab" data-tab="register" data-lang-en="Register" data-lang-id="Daftar">Register</button>
+                </div>
+
+                <div id="loginTab" class="tab-content active">
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-lang-en="Password" data-lang-id="Kata Sandi">Password</label>
+                            <input type="password" class="form-input" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;" data-lang-en="Login" data-lang-id="Masuk">Login</button>
+                    </form>
+
+                    <div class="divider"><span data-lang-en="or continue with" data-lang-id="atau lanjutkan dengan">or continue with</span></div>
+
+                    <button class="btn-social" onclick="handleGoogleLogin()">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="btn-social" onclick="handleDiscordLogin()">
+                        <i class="fab fa-discord"></i> Discord
+                    </button>
+                </div>
+
+                <div id="registerTab" class="tab-content">
+                    <form onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label class="form-label" data-lang-en="Full Name" data-lang-id="Nama Lengkap">Full Name</label>
+                            <input type="text" class="form-input" id="registerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" id="registerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-lang-en="Password" data-lang-id="Kata Sandi">Password</label>
+                            <input type="password" class="form-input" id="registerPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-lang-en="Confirm Password" data-lang-id="Konfirmasi Kata Sandi">Confirm Password</label>
+                            <input type="password" class="form-input" id="registerConfirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;" data-lang-en="Register" data-lang-id="Daftar">Register</button>
+                    </form>
+
+                    <div class="divider"><span data-lang-en="or continue with" data-lang-id="atau lanjutkan dengan">or continue with</span></div>
+
+                    <button class="btn-social" onclick="handleGoogleLogin()">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="btn-social" onclick="handleDiscordLogin()">
+                        <i class="fab fa-discord"></i> Discord
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
